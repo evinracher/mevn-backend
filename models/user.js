@@ -8,15 +8,15 @@ const ROLES = {
 }
 
 const userSchema = new Schema({
-  name: { type: String, required: [true, "Name is required"] },
-  email: { type: String, required: [true, "Email is required"], unique: true },
-  password: { type: String, required: [true, "Password is required"] },
+  name: { type: String, required: [true, "Name is required."] },
+  email: { type: String, required: [true, "Email is required."], unique: true },
+  password: { type: String, required: [true, "Password is required."] },
   date: { type: Date, default: Date.now },
   role: { type: String, default: 'USER', enum: ROLES },
   active: { type: Boolean, default: true }
 })
 
-userSchema.plugin(uniqueValidator, { message: 'Error, expected {PATH} to be unique.' })
+userSchema.plugin(uniqueValidator, { message: '{PATH} already exists.' })
 
 userSchema.methods.toJSON = function () {
   var obj = this.toObject();

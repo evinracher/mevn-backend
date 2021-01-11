@@ -8,12 +8,12 @@ const saltRounds = 10;
 const router = express.Router()
 
 router.post('/users', async (req, res) => {
-  const body = {
-    ...req.body,
-    password: bcrypt.hashSync(req.body.password, saltRounds)
-  }
-
   try {
+    const body = {
+      ...req.body,
+      password: bcrypt.hashSync(req.body.password, saltRounds)
+    }
+
     const userDB = await User.create(body)
     res.status(200).json(userDB)
   } catch (error) {

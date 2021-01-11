@@ -18,7 +18,6 @@ const verifyAuth = (req, res, next) => {
 
 const verifyAdmin = (req, res, next) => {
   const role = req.user.role
-  console.log(role)
   if (role != 'ADMIN') {
     return res.status(403).json({
       message: 'User is not an admin',
