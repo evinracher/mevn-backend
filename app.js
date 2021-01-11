@@ -16,9 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // ROUTES:
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!');
-// });
+app.get('/', (req, res) => {
+  res.send('This is an api, details on: https://github.com/evinracher/mevn-backend/blob/master/README.md');
+});
 
 app.use('/api', require('./routes/note'))
 app.use('/api', require('./routes/user'))
