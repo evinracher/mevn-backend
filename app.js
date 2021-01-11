@@ -24,9 +24,9 @@ app.use('/api', require('./routes/note'))
 app.use('/api', require('./routes/user'))
 app.use('/api', require('./routes/login'))
 
-// const uri = 'mongodb://localhost:27017/mevn-db';
+const uri = 'mongodb://localhost:27017/mevn-db';
 // const uri = 'mongodb+srv://<user>:<password>@cluster0.cho2r.mongodb.net/<dbname>?retryWrites=true&w=majority';
-const uri = 'mongodb+srv://evinracher:sis2020@cluster0.cho2r.mongodb.net/mevn-app-db?retryWrites=true&w=majority';
+// const uri = 'mongodb+srv://evinracher:sis2020@cluster0.cho2r.mongodb.net/mevn-app-db?retryWrites=true&w=majority';
 const options = { useNewUrlParser: true, useCreateIndex: true };
 
 // Or using promises
